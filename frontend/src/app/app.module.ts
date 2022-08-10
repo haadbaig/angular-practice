@@ -8,6 +8,8 @@ import { LoginformComponent } from './components/loginform/loginform.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TodocardComponent } from './components/todocard/todocard.component';
 import { CreatetodoComponent } from './components/createtodo/createtodo.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,13 +17,15 @@ import { CreatetodoComponent } from './components/createtodo/createtodo.componen
     NavheaderComponent,
     LoginformComponent,
     TodocardComponent,
-    CreatetodoComponent
+    CreatetodoComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
