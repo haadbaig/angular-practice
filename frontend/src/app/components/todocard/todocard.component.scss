@@ -1,0 +1,11 @@
+.card-bg{
+  background-color: rgb(185, 185, 185);
+  color: rgb(86, 97, 114);
+  transition: 0.5s ease-in-out;
+}
+
+.card-bg:hover{
+  background-color: rgb(185, 185, 185);
+  color: rgb(86, 97, 114);
+  transform: scale(1.05);
+}
