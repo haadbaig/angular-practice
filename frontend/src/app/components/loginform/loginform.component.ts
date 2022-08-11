@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, Validators} from '@angular/forms';
 import { LoginService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginformComponent implements OnInit {
   email  = new FormControl('', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]);
   password = new FormControl();
-
+  @Output() isLogin:EventEmitter<boolean> = new EventEmitter<boolean>(false);
   
   constructor(public loginService: LoginService, private router: Router) { }
 
@@ -34,9 +34,19 @@ export class LoginformComponent implements OnInit {
 
     this.loginService.getAll(this.email.value ,requestOptions).subscribe(
       (data)=>{
-        console.log(data);
-      });
+        localStorage.setItem("userid", data.userid);
+        if(data.status === 200){
+          this.isLogin.emit(true);          
+        }else{
+          this.isLogin.emit(false);
+        }
+      }
+    );
   }  
+
+  // emit(keyword:string){
+  //   this.state.emit(true);
+  // }
 
   
 

@@ -10,6 +10,9 @@
         <li type="button" class="nav-item" data-toggle="modal" data-target="#myModal">
           <a class="nav-link" href="#" (click)="emit('show')">Login</a>
         </li>
+        <li type="button" class="nav-item">
+          <a class="nav-link" href="#" (click)="handleLogout()">Logout</a>
+        </li>
       </ul>
     </div>
   </div>
@@ -22,7 +25,7 @@
         <h4 class="modal-title" id="myModalLabel">Login</h4>
       </div>
       <div class="modal-body">
-        <app-loginform></app-loginform>
+        <app-loginform (isLogin)="setLogin($event)" ></app-loginform>
       </div>
     </div>
   </div>

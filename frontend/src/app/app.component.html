@@ -1,4 +1,4 @@
 <div class="h-100">
-  <app-navheader (modalBoolean)="setFlag($event)"></app-navheader>
-  <app-homepage></app-homepage>
+  <app-navheader (modalBoolean)="setModalState($event)" (isLogin)="setflag($event)" (isLogout)="setLogout($event)"> </app-navheader>
+  <app-homepage *ngIf="flag && loggedout"></app-homepage>
 </div>

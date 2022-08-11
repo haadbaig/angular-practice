@@ -10,7 +10,8 @@ export class LoginService {
   
   getAll(email:any, header:any): Observable<any> {
     const res = this.http.get<string>(baseUrl+`login/${email}`, header);
-    console.log("res:", res);
+    // console.log("res:", res);
+    // localStorage.setItem("userid",res.id);
     return res;
   }
 }
