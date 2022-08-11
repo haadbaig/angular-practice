@@ -6,10 +6,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./todocard.component.scss']
 })
 export class TodocardComponent implements OnInit {
-  @Input() text:string = '';
-  @Input() title = '';
-  @Input() todoId = '';
-  constructor() { }
+  @Input() todo:any;
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
