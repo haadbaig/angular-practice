@@ -16,3 +16,20 @@
   transform: scale(1.05);
   cursor: pointer;
 }
+
+.title-field{
+  border: none;
+  width: 100%;
+  background-color: rgb(211, 211, 211);
+  outline: none;
+}
+
+.title-field:focus{
+  border: none;
+  outline: none;
+}
+
+.title-field:active{
+  border: none;
+  outline: none;
+}
